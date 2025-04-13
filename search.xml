@@ -23,6 +23,25 @@
     
     
     <entry>
+      <title>test</title>
+      <link href="/posts/d87f7e0c.html"/>
+      <url>/posts/d87f7e0c.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="我是标题"><a href="#我是标题" class="headerlink" title="我是标题"></a>我是标题</h2><p>我是文章内容</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/posts/4a17b156.html"/>
       <url>/posts/4a17b156.html</url>
