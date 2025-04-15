@@ -1,0 +1,521 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>操作系统 | Selly</title><meta name="author" content="Selly"><meta name="copyright" content="Selly"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="操作系统概述操作系统的概念操作系统（Operating System，OS）是管理计算机硬件的软件。  用户视角关注易用性而非资源利用率； 系统视角看，操作系统是资源分配器，为各个程序和用户分配资源，操作系统是控制程序，管理用户程序的执行。  定义：   操作系统包括当你预定一个操作系统时销售商发售的一切； 操作系统时一直运行在计算机上的程序，称为内核（kernel）  计算机系统的组成 硬件：为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="https://120-1.github.io/posts/861bacb5.html">
+<meta property="og:site_name" content="Selly">
+<meta property="og:description" content="操作系统概述操作系统的概念操作系统（Operating System，OS）是管理计算机硬件的软件。  用户视角关注易用性而非资源利用率； 系统视角看，操作系统是资源分配器，为各个程序和用户分配资源，操作系统是控制程序，管理用户程序的执行。  定义：   操作系统包括当你预定一个操作系统时销售商发售的一切； 操作系统时一直运行在计算机上的程序，称为内核（kernel）  计算机系统的组成 硬件：为">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://120-1.github.io/img/spotlight_hyeri1.png">
+<meta property="article:published_time" content="2025-04-14T10:37:20.000Z">
+<meta property="article:modified_time" content="2025-04-14T13:44:11.671Z">
+<meta property="article:author" content="Selly">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://120-1.github.io/img/spotlight_hyeri1.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "操作系统",
+  "url": "https://120-1.github.io/posts/861bacb5.html",
+  "image": "https://120-1.github.io/img/spotlight_hyeri1.png",
+  "datePublished": "2025-04-14T10:37:20.000Z",
+  "dateModified": "2025-04-14T13:44:11.671Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Selly",
+      "url": "https://120-1.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://120-1.github.io/posts/861bacb5.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#ecb8d5"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/128.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/16.png"/><link rel="mask-icon" href="/img/siteicon/128.png" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '操作系统',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-blog@2.0.4/css/runtime/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Selly" type="application/atom+xml">
+</head><body><div id="web_bg" style="background-image: url(/img/hyeri.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/jay.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(img/spotlight_hyeri1.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Selly</span></a><a class="nav-page-title" href="/"><span class="site-name">操作系统</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">操作系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-04-14T10:37:20.000Z" title="发表于 2025-04-14 18:37:20">2025-04-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-14T13:44:11.671Z" title="更新于 2025-04-14 21:44:11">2025-04-14</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h2><h3 id="操作系统的概念"><a href="#操作系统的概念" class="headerlink" title="操作系统的概念"></a>操作系统的概念</h3><p>操作系统（Operating System，OS）是管理计算机硬件的软件。</p>
+<ul>
+<li>用户视角关注易用性而非资源利用率；</li>
+<li>系统视角看，操作系统是资源分配器，为各个程序和用户分配资源，操作系统是控制程序，管理用户程序的执行。</li>
+</ul>
+<p><strong>定义：</strong> </p>
+<ul>
+<li>操作系统包括当你预定一个操作系统时销售商发售的一切；</li>
+<li>操作系统时一直运行在计算机上的程序，称为内核（kernel）</li>
+</ul>
+<h3 id="计算机系统的组成"><a href="#计算机系统的组成" class="headerlink" title="计算机系统的组成"></a>计算机系统的组成</h3><ul>
+<li>硬件：为计算机提供基本的计算资源，如CPU、内存、I/O设备等；</li>
+<li>操作系统：控制硬件，并协调各个用户应用程序的硬件使用；</li>
+<li>应用程序：确定了用户为解决计算问题而使用这些资源的方式；</li>
+<li>用户：</li>
+</ul>
+<h3 id="操作系统的中断处理"><a href="#操作系统的中断处理" class="headerlink" title="操作系统的中断处理"></a>操作系统的中断处理</h3><p><strong>中断：</strong> 是操作系统和硬件交互的关键部分，硬件可以通过系统总线随时发送信号到CPU触发中断，当CPU被中断时，它停止正在做的事情，并立即转到固定位置执行中断处理程序，中断处理程序是操作系统的一部分，它负责处理中断，并恢复CPU到中断前的状态。</p>
+<h3 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h3><p>主存、辅存</p>
+<h3 id="I-O结构"><a href="#I-O结构" class="headerlink" title="I/O结构"></a>I/O结构</h3><ul>
+<li>同步I/O：I/O 启动后，在 I/O 完成之前，控制权不会返回给用户程序。</li>
+<li>异步I/O：I/O 启动后，控制权将返回给用户程序，而无需等待 I/O 完成</li>
+<li>DMA（直接内存访问）：设备控制器将数据块从缓冲区存储直接传输到主内存，无需 CPU 干预；每个块只生成一个中断，而不是每个字节生成一个中断</li>
+</ul>
+<h3 id="计算机系统的体系结构"><a href="#计算机系统的体系结构" class="headerlink" title="计算机系统的体系结构"></a>计算机系统的体系结构</h3><p>根据通用处理器的数量</p>
+<ol>
+<li>单处理器系统：使用一个具有单个处理核（core）的CPU。处理核是执行指令和利用寄存器存储数据的组件。</li>
+<li>多处理器系统：多个处理器，每个处理器都有一个单核CPU。<br>-SMP（对称多处理）：每个对等CPU处理器执行所有任务，包括操作系统功能和用户进程。每个处理器都有自己的CPU，每个CPU都有自己的寄存器和私有缓存，但是所有处理器通过系统总线共享物理内存。<br>-非对称多处理（主从）<br>-多核系统<br>-NUMA：非均匀内存访问（NUMA）是一种内存访问策略，其中内存访问时间取决于内存的位置。在NUMA系统中，内存被划分为多个节点，每个节点都有自己的本地内存。当处理器访问本地内存时，访问时间较短，而访问远程内存（位于其他节点）时，访问时间较长。</li>
+<li>集群系统：<br> -对称集群…<br> -非对称集群…</li>
+</ol>
+<p><strong>名词释义：</strong></p>
+<ul>
+<li>CPU：执行指令的硬件</li>
+<li>处理器：包含一个或多个CPU的物理芯片</li>
+<li>处理核：CPU的基本计算单元</li>
+<li>多核：位于同一CPU上的多个处理核</li>
+<li>多处理器：多个处理器<br>表示计算机系统的单个计算单元时，使用术语CPU；表示CPU的一个或多个处理核时，使用术语单核或多核</li>
+</ul>
+<h3 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h3><ul>
+<li><strong>并发</strong>：指两个或多个事件可以在<strong>同一个时刻</strong>发生，多核CPU可以实现并行，一个cpu同一时刻只有<strong>一个程序</strong>在运行；</li>
+<li><strong>并行</strong>：指两个或多个事件可以在<strong>同一个时间间隔</strong>发生，<em>用户</em>看起来是每个程序都在运行，实际上是<strong>每个程序都交替执行</strong>。</li>
+<li><strong>多道程序设计（multiprogramming）</strong>：通过组织程序使得CPU总有一个执行作业，从而提高CPU利用率，让用户满意（通过切换进程：正在执行的程序）<br>  适合<strong>批处理</strong>作业<br>  核心思想：内存中可以同时存在多道作业，它们并发或并行运行<br>  通过合理调度，让多道作业交替占用处理机，同时使用不同的资源。<br>  无交互性：用户直到作业结束前，都不能干预作业的执行。</li>
+<li><strong>分时（time sharing）、多任务（multitasking）</strong>：多道的逻辑扩展<br>  适合<strong>交互</strong>作业<br>  每个用户获得相同的时间片，让多个进程轮流占用处理机，每个进程不管是否结束，在规定的一个时间片内都会被强制停止，更换等待队列中的下一个进程。如此循环执行。（running–&gt;ready状态：时间片终止）<br>  效果：每个用户感觉独占处理机<br>  交互性：用户则可以干预作业的执行（可以根据系统响应结果，提出下一个要求）<br>  关注指标：响应时间</li>
+<li>双模式：用户模式、内核模式（特权模式、监视模式、系统模式），通过模式位区分为操作系统执行的任务和为用户执行的任务。<pre><code>  执行用户应用时，处于用户模式，当用户应用通过*系统调用*请求操作系统服务时，系统从用户模式切换到内核模式。
+</code></pre></li>
+<li>定时器（timer）：阻止用户程序、设置为在特定时间段后中断计算机，当定时器中断时，控制自动转到操作系统。</li>
+</ul>
+<h3 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h3><h4 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h4><p>进程：主动实体，单线程进程有一个程序计数器PC，指定下一个要执行的指令，多线程进程有多个PC</p>
+<pre><code> - 进程是系统的工作单元，有系统进程、用户进程，进程为了完成任务，需要一定的资源，包括CPU时间、内存、文件、I/O设备等，当进程终止时，操作系统将回收所有可重用的资源。
+</code></pre><p>操作系统负责进程管理的以下活动：</p>
+<pre><code> - 创建和删除用户进程和系统进程
+ - 在CPU上调度用户进程和系统进程
+ - 挂起和重启进程
+ - 提供进程同步机制
+ - 提供进程通信机制
+ - 提供死锁处理机制
+</code></pre><ul>
+<li>程序：被动实体，如磁盘上的文件内容<h4 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h4>主存：现代计算机系统执行的中心，是一个大的字节数组，CPU所能直接寻址和访问的唯一大容量存储器。<br>如果一个程序需要执行，那么它必须映射到绝对地址，并且加载到内存。进程终止时，它的内存空间得以释放。<br>操作系统负责内存管理的以下活动：</li>
+<li>记录内存的哪部分在被使用，以及被谁使用</li>
+<li>根据需要分配和释放内存空间</li>
+<li>决定哪些进程会调入或调出内存<h4 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h4>操作系统将存储设备的物理属性抽象为一个逻辑存储单元，并提供信息存储的统一逻辑视图：文件<br>操作系统将文件映射到物理介质上，并通过存储设备访问文件。<br>文件是创作者定义的相关信息组合，通常为程序和数据。<br>操作系统负责文件管理的以下活动：</li>
+<li>创建和删除文件</li>
+<li>创建和删除目录，以便组织文件</li>
+<li>提供文件和目录的操作原语</li>
+<li>映射文件到大容量存储</li>
+<li>备份文件到稳定存储介质<h4 id="大容量存储管理"><a href="#大容量存储管理" class="headerlink" title="大容量存储管理"></a>大容量存储管理</h4>计算机必须提供辅助存储以备份主内存，大多数计算机使用磁盘作为主要的在线存储介质。<br>操作系统负责与外存管理相关的以下活动：</li>
+<li>安装和卸载</li>
+<li>空闲空间管理</li>
+<li>存储分配</li>
+<li>硬盘调度</li>
+<li>分区</li>
+<li>保护<h4 id="高速缓存管理"><a href="#高速缓存管理" class="headerlink" title="高速缓存管理"></a>高速缓存管理</h4>缓存是一种更快的存储系统</li>
+<li>可编程寄存器Programmable Register(高速缓存实现形式1)：段表、页表</li>
+<li>Cache(高速缓存实现形式2)：由硬件管理的存储系统</li>
+<li>Main memory （高速缓存实现形式3）：主内存可以被视为辅助存储的快速缓存<br>缓存管理：</li>
+<li>缓存的大小有限</li>
+<li>数据一致性<h4 id="I-O系统管理"><a href="#I-O系统管理" class="headerlink" title="I/O系统管理"></a>I/O系统管理</h4>OS 的一个目的是向用户隐藏硬件设备的特性<br>I/O子系统包括以下几个组件：</li>
+<li>包括缓冲、高速缓存和假脱机的内存管理组件</li>
+<li>设备驱动器的通用接口</li>
+<li>特定硬件设备的驱动程序</li>
+</ul>
+<h3 id="保护和安全"><a href="#保护和安全" class="headerlink" title="保护和安全"></a>保护和安全</h3><p>保护：一种机制，用于控制进程或用户访问计算机系统的资源</p>
+<pre><code>- 检测组件子系统之间的接口处的潜在错误
+- 及早检测到接口错误通常可以防止另一个出现故障的系统（故障）对健康的子系统进行污染（影响）。
+- 未受保护的资源无法抵御未经授权或不称职 （不胜任的） 用户的使用/误用
+- 面向保护的系统提供了一种区分授权和未授权使用的方法。
+</code></pre><p>安全：防止系统不受外部或内部的攻击</p>
+<pre><code>- 具有足够保护的系统仍然容易出现故障并允许不适当的访问
+- 防止一些攻击是作系统的责任，而其他的则留给 policy（规章制度）或其他软件
+</code></pre><h3 id="几种操作系统"><a href="#几种操作系统" class="headerlink" title="几种操作系统"></a>几种操作系统</h3><ul>
+<li>分布式系统是物理上独立的、可能是异构的、通过网络相连的一组计算机系统。<br>网络是两个或多个系统之间的通信路径</li>
+<li>网络操作系统提供跨网络的文件共享、不同计算机进程的消息交换等功能。与分布式操作系统相比，运行网络作系统的计算机独立于所有其他计算机自主 （自治），分布式系统提供了一个自治程度较低的系统，并提供了一种单一作控制网络的不同计算机的错觉</li>
+<li>实时嵌入式系统</li>
+<li>多媒体系统</li>
+<li>手持式系统</li>
+</ul>
+<h3 id="计算环境"><a href="#计算环境" class="headerlink" title="计算环境"></a>计算环境</h3><ul>
+<li>传统计算机：办公环境、家庭环境</li>
+<li>客户端-服务器计算</li>
+<li>点对点计算</li>
+<li>基于 Web 的计算</li>
+</ul>
+<h2 id="操作系统结构"><a href="#操作系统结构" class="headerlink" title="操作系统结构"></a>操作系统结构</h2><p>提供的服务、用户和程序员采用的接口、系统组件及其相互关系</p>
+<h3 id="操作系统的服务"><a href="#操作系统的服务" class="headerlink" title="操作系统的服务"></a>操作系统的服务</h3><p>有一组服务提供用户功能：</p>
+<ul>
+<li>用户界面：图形用户界面GUI、命令行CLI</li>
+<li>程序执行</li>
+<li>I/O操作</li>
+<li>文件系统操作</li>
+<li>通信</li>
+<li>错误检测<br>还有一组服务确保系统本身高效运行：</li>
+<li>资源分配</li>
+<li>日志</li>
+<li>保护和安全</li>
+</ul>
+<h3 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h3><ol>
+<li>系统调用提供操作系统服务接口，这些调用常用C/C++编写<br>通常，应用程序开发人员根据应用编程接口（API）来设计程序，API为方便应用程序员规定了一组函数，包括每个函数的输入参数和程序员所想得到的返回值。<br>最常见的API</li>
+</ol>
+<ul>
+<li>Win32 API，适用于 Windows 系统</li>
+<li>POSIX API，用于 UNIX/Linux/MacOS X</li>
+<li>JAVA API，用于 JAVA 虚拟机<br>在后台，API函数通常为应用程序开发人员调用世纪系统调用，如Windows函数CreateProcess()实际调用Windows内核的系统调用NTCreateProcess()。</li>
+</ul>
+<ol>
+<li>为什么使用 API 而不是系统调用？</li>
+</ol>
+<ul>
+<li>可移植性/兼容性 ：基于 API 的程序可以在支持相同 API 的任何不同系统上编译和运行</li>
+<li>简单性/可用性：API 比系统调用更容易使用</li>
+</ul>
+<ol>
+<li><p>系统调用接口<br>由RTE（运行时环境）提供，作为操作系统提供的系统调用的链接。<br>系统调用接口截取API函数的调用，并调用操作系统中的所需系统调用。</p>
+</li>
+<li><p>三种向操作系统传递参数的方法</p>
+</li>
+</ol>
+<ul>
+<li>通过寄存器传递参数：速度快，无需内存操作，减少开销，但在某些情况下，参数可能比寄存器多 </li>
+<li>通过堆栈传递参数：支持大量参数或复杂数据结构。需额外内存操作，性能略低于寄存器传递</li>
+<li>通过内存传递参数：灵活性高，不限制参数数量和大小。堆栈操作较慢，且需注意堆栈平衡（调用者或被调用者需清理堆栈）</li>
+</ul>
+<h3 id="系统调用的类型"><a href="#系统调用的类型" class="headerlink" title="系统调用的类型"></a>系统调用的类型</h3><ol>
+<li>进程控制<ul>
+<li>创建和终止进程</li>
+<li>加载、执行</li>
+<li>获取进程属性，设置进程属性</li>
+<li>等待事件，信号事件</li>
+<li>分配和释放内存</li>
+</ul>
+</li>
+<li>文件管理<ul>
+<li>创建文件，删除文件</li>
+<li>打开，关闭</li>
+<li>读，写，重定位</li>
+<li>获取文件属性，设置文件属性</li>
+</ul>
+</li>
+<li>设备管理<ul>
+<li>请求设备，释放设备</li>
+<li>读，写，重定位</li>
+<li>获取设备属性，设置设备属性</li>
+<li>逻辑增加或移除设备</li>
+</ul>
+</li>
+<li>信息维护<ul>
+<li>获取时间和日期，设置时间和日期</li>
+<li>获取系统数据，设置系统数据</li>
+<li>获取进程、文件或设备属性</li>
+<li>设置进程、文件或设备属性</li>
+</ul>
+</li>
+<li>通信<ul>
+<li>创建、删除通信连接</li>
+<li>发送、接收消息</li>
+<li>传输状态信息</li>
+<li>增加或移除远程设备</li>
+</ul>
+</li>
+<li>保护<ul>
+<li>获取文件权限</li>
+<li>设置文件权限</li>
+</ul>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://120-1.github.io">Selly</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://120-1.github.io/posts/861bacb5.html">https://120-1.github.io/posts/861bacb5.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://120-1.github.io" target="_blank">Selly</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></div><div class="post-share"><div class="social-share" data-image="/img/spotlight_hyeri1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/d87f7e0c.html" title="test"><img class="cover" src="/img/jay.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">test</div></div><div class="info-2"><div class="info-item-1">我是标题我是文章内容 </div></div></div></a><a class="pagination-related  no-desc" href="/posts/d334bd41.html" title="这是一篇测试"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">这是一篇测试</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/jay.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Selly</div><div class="author-info-description">Selly的博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">操作系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">操作系统的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">1.2.</span> <span class="toc-text">计算机系统的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">操作系统的中断处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.</span> <span class="toc-text">存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O%E7%BB%93%E6%9E%84"><span class="toc-number">1.5.</span> <span class="toc-text">I&#x2F;O结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.6.</span> <span class="toc-text">计算机系统的体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="toc-number">1.7.</span> <span class="toc-text">一些概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86"><span class="toc-number">1.8.</span> <span class="toc-text">资源管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">1.8.1.</span> <span class="toc-text">进程管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-number">1.8.2.</span> <span class="toc-text">内存管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">1.8.3.</span> <span class="toc-text">文件管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86"><span class="toc-number">1.8.4.</span> <span class="toc-text">大容量存储管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-number">1.8.5.</span> <span class="toc-text">高速缓存管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I-O%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86"><span class="toc-number">1.8.6.</span> <span class="toc-text">I&#x2F;O系统管理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E6%8A%A4%E5%92%8C%E5%AE%89%E5%85%A8"><span class="toc-number">1.9.</span> <span class="toc-text">保护和安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E7%A7%8D%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.10.</span> <span class="toc-text">几种操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83"><span class="toc-number">1.11.</span> <span class="toc-text">计算环境</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">操作系统结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="toc-number">2.1.</span> <span class="toc-text">操作系统的服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="toc-number">2.2.</span> <span class="toc-text">系统调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">系统调用的类型</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d334bd41.html" title="这是一篇测试">这是一篇测试</a><time datetime="2028-04-11T16:00:00.000Z" title="发表于 2028-04-12 00:00:00">2028-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/861bacb5.html" title="操作系统"><img src="/img/spotlight_hyeri1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统"/></a><div class="content"><a class="title" href="/posts/861bacb5.html" title="操作系统">操作系统</a><time datetime="2025-04-14T10:37:20.000Z" title="发表于 2025-04-14 18:37:20">2025-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d87f7e0c.html" title="test"><img src="/img/jay.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="test"/></a><div class="content"><a class="title" href="/posts/d87f7e0c.html" title="test">test</a><time datetime="2025-04-13T09:28:14.000Z" title="发表于 2025-04-13 17:28:14">2025-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/4a17b156.html" title="Hello World">Hello World</a><time datetime="2025-04-10T13:00:00.000Z" title="发表于 2025-04-10 21:00:00">2025-04-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Selly</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://www.twikoo-selly.xyz/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://www.twikoo-selly.xyz/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="9474113045" data-server="tencent" data-type="playlist" data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><div class="app-refresh" id="app-refresh" style="position: fixed;top: -2.2rem;left: 0;right: 0;z-index: 99999;padding: 0 1rem;font-size: 15px;height: 2.2rem;transition: all 0.3s ease;"><div class="app-refresh-wrap" style=" display: flex;color: #fff;height: 100%;align-items: center;justify-content: center;"><label>✨ 有新文章啦！ 👉</label><a href="javascript:void(0)" onclick="location.reload()"><span style="color: #fff;text-decoration: underline;cursor: pointer;">🍗点击食用🍔</span></a></div></div><script>if ('serviceWorker' in navigator) {
+if (navigator.serviceWorker.controller) {
+navigator.serviceWorker.addEventListener('controllerchange', function() {
+showNotification()
+})
+}
+window.addEventListener('load', function() {
+navigator.serviceWorker.register('/sw.js')
+})
+}
+function showNotification() {
+if (GLOBAL_CONFIG.Snackbar) {
+var snackbarBg =
+document.documentElement.getAttribute('data-theme') === 'light' ?
+GLOBAL_CONFIG.Snackbar.bgLight :
+GLOBAL_CONFIG.Snackbar.bgDark
+var snackbarPos = GLOBAL_CONFIG.Snackbar.position
+Snackbar.show({
+text: '✨ 有新文章啦！ 👉',
+backgroundColor: snackbarBg,
+duration: 500000,
+pos: snackbarPos,
+actionText: '🍗点击食用🍔',
+actionTextColor: '#fff',
+onActionClick: function(e) {
+location.reload()
+},
+})
+} else {
+var showBg =
+document.documentElement.getAttribute('data-theme') === 'light' ?
+'#3b70fc' :
+'#1f1f1f'
+var cssText = `top: 0; background: ${showBg};`
+document.getElementById('app-refresh').style.cssText = cssText
+}
+}</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime/runtime.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="/js/ali_font.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
